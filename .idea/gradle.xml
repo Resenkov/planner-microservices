@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/planner-config" name="planner-config">
+                <projects>
+                  <project path="$PROJECT_DIR$/planner-config" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/planner-entity" name="planner-entity">
+                <projects>
+                  <project path="$PROJECT_DIR$/planner-entity" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/planner-gateway" name="planner-gateway">
+                <projects>
+                  <project path="$PROJECT_DIR$/planner-gateway" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/planner-server" name="planner-server">
+                <projects>
+                  <project path="$PROJECT_DIR$/planner-server" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/planner-todo" name="planner-todo">
+                <projects>
+                  <project path="$PROJECT_DIR$/planner-todo" />
+                  <project path="$PROJECT_DIR$/planner-todo/planner-entity" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/planner-users" name="planner-users">
+                <projects>
+                  <project path="$PROJECT_DIR$/planner-users" />
+                  <project path="$PROJECT_DIR$/planner-users/planner-entity" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/planner-config" />
+            <option value="$PROJECT_DIR$/planner-entity" />
+            <option value="$PROJECT_DIR$/planner-gateway" />
+            <option value="$PROJECT_DIR$/planner-server" />
+            <option value="$PROJECT_DIR$/planner-todo" />
+            <option value="$PROJECT_DIR$/planner-todo/planner-entity" />
+            <option value="$PROJECT_DIR$/planner-users" />
+            <option value="$PROJECT_DIR$/planner-users/planner-entity" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/planner-config" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/planner-config" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/planner-entity" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/planner-entity" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/planner-gateway" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/planner-gateway" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/planner-server" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/planner-server" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/planner-todo" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/planner-todo" />
+            <option value="$PROJECT_DIR$/planner-todo/planner-entity" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/planner-users" />
+        <option name="gradleJvm" value="22" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/planner-users" />
+            <option value="$PROJECT_DIR$/planner-users/planner-entity" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

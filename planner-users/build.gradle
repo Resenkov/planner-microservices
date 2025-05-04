@@ -1,0 +1,43 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.4'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'resenkov.work'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('springCloudVersion', "2024.0.1")
+}
+
+dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation('org.springframework.cloud:spring-cloud-starter-config')
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation group: 'wiki.xsx', name: 'slf4j-spring-boot-starter', version: '1.4.10'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation("org.postgresql:postgresql:42.7.5")
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly 'org.projectlombok:lombok'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '3.4.0'
+	implementation('resenkov.work:planner-entity')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}
