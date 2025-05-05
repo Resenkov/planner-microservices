@@ -5,7 +5,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import resenkov.work.plannerentity.entity.Priority;
+import resenkov.work.plannertodo.entity.Priority;
 import resenkov.work.plannertodo.search.PrioritySearchValues;
 import resenkov.work.plannertodo.service.PriorityService;
 

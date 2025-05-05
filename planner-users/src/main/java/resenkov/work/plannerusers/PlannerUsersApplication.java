@@ -10,8 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(basePackages = {"resenkov.work"})
-@EntityScan("resenkov.work.plannerentity.entity")  // <- Указываем пакет с User
-@EnableJpaRepositories("resenkov.work.plannerusers.repository")  // <- Пакет с репозиторием
+@EntityScan("resenkov.work.plannerusers.entity")
+@EnableJpaRepositories("resenkov.work.plannerusers.repository")
 public class PlannerUsersApplication {
 
 	public static void main(String[] args) {

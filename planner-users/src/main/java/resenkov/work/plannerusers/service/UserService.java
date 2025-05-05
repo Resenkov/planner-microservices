@@ -2,7 +2,7 @@ package resenkov.work.plannerusers.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import resenkov.work.plannerentity.entity.User;
+import resenkov.work.plannerusers.entity.User;
 import resenkov.work.plannerusers.repository.UserRepository;
 
 @Service

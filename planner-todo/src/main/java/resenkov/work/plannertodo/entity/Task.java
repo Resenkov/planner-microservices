@@ -1,4 +1,4 @@
-package resenkov.work.plannerentity.entity;
+package resenkov.work.plannertodo.entity;
 
 
 
@@ -17,7 +17,7 @@ import java.util.Objects;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "task", schema = "todo",catalog = "planner_todo")
+@Table(name = "task", catalog = "planner_todo")
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Task {

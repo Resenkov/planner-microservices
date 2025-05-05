@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/planner-entity/planner-microservice.planner-entity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/planner-entity/planner-microservice.planner-entity.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/planner-users.main.iml" filepath="$PROJECT_DIR$/.idea/modules/planner-users.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/resenkov.work.planner-entity.main.iml" filepath="$PROJECT_DIR$/.idea/modules/resenkov.work.planner-entity.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/resenkov.work.planner-todo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/resenkov.work.planner-todo.main.iml" />
     </modules>
   </component>

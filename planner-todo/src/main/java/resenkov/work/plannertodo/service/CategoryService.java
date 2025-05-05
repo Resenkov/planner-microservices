@@ -4,7 +4,7 @@ package resenkov.work.plannertodo.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import resenkov.work.plannerentity.entity.Categories;
+import resenkov.work.plannertodo.entity.Categories;
 import resenkov.work.plannertodo.repo.CategoryRepository;
 
 import java.util.List;

@@ -2,7 +2,8 @@ package resenkov.work.plannertodo.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import resenkov.work.plannerentity.entity.Priority;
+
+import resenkov.work.plannertodo.entity.Priority;
 import resenkov.work.plannertodo.repo.PriorityRepository;
 
 

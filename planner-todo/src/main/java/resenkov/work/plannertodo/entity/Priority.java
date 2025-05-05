@@ -1,4 +1,4 @@
-package resenkov.work.plannerentity.entity;
+package resenkov.work.plannertodo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,42 +9,40 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
-@Entity
-@Table(name = "user_data", schema = "users", catalog = "planner_users")
-@Setter
 @Getter
+@Setter
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "priority", catalog = "planner_todo")
 @Cacheable
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class User {
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class Priority {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    private String email;
+    @Column(name = "title", nullable = false, length = Integer.MAX_VALUE)
+    private String title;
 
-    private String username;
+    @Column(name = "color", nullable = false, length = Integer.MAX_VALUE)
+    private String color;
 
-    @Column(name = "userpassword")
-    private String password;
+    @Column(name="user_id")
+    private Long userId;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
+        Priority priority = (Priority) o;
+        return Objects.equals(id, priority.id);
     }
 
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
-    }
-
-    @Override
-    public String toString() {
-        return username;
     }
 }

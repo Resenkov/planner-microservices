@@ -2,7 +2,7 @@ package resenkov.work.plannertodo.repo;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import resenkov.work.plannerentity.entity.Stat;
+import resenkov.work.plannertodo.entity.Stat;
 
 
 @Repository

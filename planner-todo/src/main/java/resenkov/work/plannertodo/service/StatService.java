@@ -3,7 +3,7 @@ package resenkov.work.plannertodo.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import resenkov.work.plannerentity.entity.Stat;
+import resenkov.work.plannertodo.entity.Stat;
 import resenkov.work.plannertodo.repo.StatRepository;
 
 
