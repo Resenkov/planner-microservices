@@ -6,7 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import resenkov.work.plannerentity.entity.Categories;
+import resenkov.work.plannertodo.entity.Categories;
+
 
 import java.util.List;
 

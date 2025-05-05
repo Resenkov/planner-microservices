@@ -4,7 +4,8 @@ package resenkov.work.plannerusers.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import resenkov.work.plannerentity.entity.User;
+
+import resenkov.work.plannerusers.entity.User;
 import resenkov.work.plannerusers.service.UserService;
 
 @RestController

@@ -1,4 +1,4 @@
-package resenkov.work.plannerentity.entity;
+package resenkov.work.plannertodo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.Objects;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "activity", schema = "todo",catalog = "planner_todo")
+@Table(name = "activity",catalog = "planner_todo")
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Activity {

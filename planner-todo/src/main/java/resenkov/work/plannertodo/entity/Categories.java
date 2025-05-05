@@ -1,5 +1,4 @@
-package resenkov.work.plannerentity.entity;
-
+package resenkov.work.plannertodo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,36 +9,40 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
+
 @Getter
 @Setter
 @Entity
-@NoArgsConstructor
+@Table(name = "categories",catalog = "planner_todo")
 @AllArgsConstructor
-@Table(name = "stat", schema = "todo",catalog = "planner_todo")
+@NoArgsConstructor
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Stat {
+public class Categories {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Id
     private Long id;
 
-    @Column(name = "completed_total",updatable = false)
-    private Long completedTotal;
+    @Column(name = "title", nullable = false, length = Integer.MAX_VALUE)
+    private String title;
 
-    @Column(name = "uncompleted_total",updatable = false)
-    private Long uncompletedTotal;
+    @Column(name = "completed_count",updatable = false)
+    private Long completedCount;
 
-    @Column(name="user_id")
+    @Column(name = "uncompleted_count", updatable = false)
+    private Long uncompletedCount;
+
+    @Column(name= "user_id")
     private Long userId;
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Stat stat = (Stat) o;
-        return Objects.equals(id, stat.id);
+        Categories that = (Categories) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override

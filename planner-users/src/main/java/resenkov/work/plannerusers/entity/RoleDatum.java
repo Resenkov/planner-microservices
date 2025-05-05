@@ -1,4 +1,4 @@
-package resenkov.work.plannerentity.entity;
+package resenkov.work.plannerusers.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.util.Set;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "role_data", schema = "users",catalog = "planner_users")
+@Table(name = "role_data",catalog = "planner_users")
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class RoleDatum {

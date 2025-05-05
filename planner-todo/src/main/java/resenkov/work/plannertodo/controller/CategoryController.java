@@ -6,7 +6,8 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import resenkov.work.plannerentity.entity.Categories;
+
+import resenkov.work.plannertodo.entity.Categories;
 import resenkov.work.plannertodo.search.CategorySearchValues;
 import resenkov.work.plannertodo.service.CategoryService;
 
