@@ -3,6 +3,6 @@ rootProject.name = 'planner-microservice'
 includeBuild('planner-server')
 includeBuild('planner-gateway')
 includeBuild ('planner-config')
-includeBuild ('planner-entity')
 includeBuild('planner-todo')
 includeBuild('planner-users')
+includeBuild('planner-utils')
