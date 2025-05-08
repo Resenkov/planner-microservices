@@ -11,6 +11,7 @@ import resenkov.work.plannertodo.entity.Task;
 import resenkov.work.plannertodo.search.TaskSearchValues;
 import resenkov.work.plannertodo.service.TaskService;
 import resenkov.work.plannerutils.rest.resttemplate.UserRestBuilder;
+import resenkov.work.plannerutils.rest.webclient.UserWebClientBuilder;
 
 import java.text.ParseException;
 import java.util.Calendar;
@@ -26,12 +27,11 @@ public class TaskController {
 
     public static final String ID_COLUMN = "id";
     private final TaskService taskService;
+    private final UserWebClientBuilder userWebClientBuilder;
 
-    private final UserRestBuilder userRestBuilder;
-
-    public TaskController(TaskService taskService, UserRestBuilder userRestBuilder) {
+    public TaskController(TaskService taskService, UserWebClientBuilder userWebClientBuilder) {
         this.taskService = taskService;
-        this.userRestBuilder = userRestBuilder;
+        this.userWebClientBuilder = userWebClientBuilder;
     }
 
 
@@ -51,7 +51,7 @@ public class TaskController {
             return new ResponseEntity("Введите название!", HttpStatus.NOT_ACCEPTABLE);
         }
 
-        if (userRestBuilder.userExists(task.getUserId())) {
+        if (userWebClientBuilder.userExists(task.getUserId())) {
             return ResponseEntity.ok(taskService.add(task));
         }
 
@@ -70,8 +70,9 @@ public class TaskController {
         if (task.getTitle() == null || task.getTitle().trim().length() == 0) {
             return new ResponseEntity("missed param: title", HttpStatus.NOT_ACCEPTABLE);
         }
-
-        taskService.update(task);
+        if (userWebClientBuilder.userExists(task.getUserId())) {
+            return ResponseEntity.ok(taskService.update(task));
+        }
 
         return new ResponseEntity(HttpStatus.OK);
 

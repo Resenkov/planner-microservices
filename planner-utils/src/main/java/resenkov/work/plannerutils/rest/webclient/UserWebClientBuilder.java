@@ -22,7 +22,7 @@ public class UserWebClientBuilder {
                     .bodyValue(userId)
                     .retrieve()
                     .bodyToFlux(User.class)
-                    .blockFirst(); // блокирует поток до получения 1й записи
+                    .blockFirst();
 
             if (user != null) {
                 return true;

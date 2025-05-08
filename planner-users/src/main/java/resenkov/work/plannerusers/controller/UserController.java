@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import resenkov.work.plannerusers.entity.User;
 import resenkov.work.plannerusers.service.UserService;
 
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -38,9 +41,17 @@ public class UserController {
         return new ResponseEntity(HttpStatus.OK);
     }
 
-    @GetMapping("/get/{id}")
-    public ResponseEntity<User> getById(@PathVariable("id") Long userId){
-        return ResponseEntity.ok(userService.getById(userId));
+    @PostMapping("/id")
+    public ResponseEntity<User> getById(@RequestBody Long userId){
+        Optional<User> userOptional = userService.findById(userId);
+        try {
+            if(userOptional.isPresent()){
+                return ResponseEntity.ok(userOptional.get());
+            }
+        } catch (NoSuchElementException e) {
+            throw new RuntimeException(e);
+        }
+        return new ResponseEntity("User not found", HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/get")
