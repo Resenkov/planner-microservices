@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/planner-users.main.iml" filepath="$PROJECT_DIR$/.idea/modules/planner-users.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/planner-utils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/planner-utils.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/resenkov.work.planner-todo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/resenkov.work.planner-todo.main.iml" />
     </modules>
   </component>

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import resenkov.work.plannertodo.entity.Categories;
 import resenkov.work.plannertodo.search.CategorySearchValues;
 import resenkov.work.plannertodo.service.CategoryService;
+import resenkov.work.plannerutils.rest.resttemplate.UserRestBuilder;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -21,9 +22,11 @@ public class CategoryController {
 
 
     private CategoryService categoryService;
+    private final UserRestBuilder userRestBuilder;
 
-    public CategoryController(CategoryService categoryService) {
+    public CategoryController(CategoryService categoryService, UserRestBuilder userRestBuilder) {
         this.categoryService = categoryService;
+        this.userRestBuilder = userRestBuilder;
     }
 
     @PostMapping("/all")
@@ -41,7 +44,11 @@ public class CategoryController {
             return new ResponseEntity("missed param: title", HttpStatus.NOT_ACCEPTABLE);
         }
 
-        return ResponseEntity.ok(categoryService.add(categories));
+        if(userRestBuilder.userExists(categories.getUserId())){
+            return ResponseEntity.ok(categoryService.add(categories));
+        }
+
+        return new ResponseEntity ("Произошла ошибка при добавлении категории", HttpStatus.NOT_ACCEPTABLE);
     }
 
     @PutMapping("/update")
@@ -54,9 +61,11 @@ public class CategoryController {
             return new ResponseEntity("missed param title", HttpStatus.NOT_ACCEPTABLE);
         }
 
-        categoryService.update(category);
+        if(userRestBuilder.userExists(category.getUserId())){
+            return ResponseEntity.ok(categoryService.update(category));
+        }
 
-        return new ResponseEntity(HttpStatus.OK);
+        return new ResponseEntity ("Произошла ошибка при обновлении категории", HttpStatus.NOT_ACCEPTABLE);
     }
 
     @DeleteMapping("/delete/{id}")

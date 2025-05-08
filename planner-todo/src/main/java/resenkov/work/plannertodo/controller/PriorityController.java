@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import resenkov.work.plannertodo.entity.Priority;
 import resenkov.work.plannertodo.search.PrioritySearchValues;
 import resenkov.work.plannertodo.service.PriorityService;
+import resenkov.work.plannerutils.rest.resttemplate.UserRestBuilder;
 
 
 import java.util.List;
@@ -18,8 +19,11 @@ import java.util.NoSuchElementException;
 public class PriorityController {
 
     private final PriorityService priorityService;
-    public PriorityController(PriorityService priorityService) {
+    private final UserRestBuilder userRestBuilder;
+
+    public PriorityController(PriorityService priorityService, UserRestBuilder userRestBuilder) {
         this.priorityService = priorityService;
+        this.userRestBuilder = userRestBuilder;
     }
 
     @PostMapping("/all")
@@ -32,7 +36,12 @@ public class PriorityController {
         if(priority.getTitle()== null || priority.getTitle().trim().length() == 0){
             return new ResponseEntity("Title must be not empty", HttpStatus.NOT_ACCEPTABLE);
         }
-        return ResponseEntity.ok(priorityService.add(priority));
+
+        if (userRestBuilder.userExists(priority.getUserId())){
+            return ResponseEntity.ok(priorityService.add(priority));
+        }
+
+        return new ResponseEntity ("Ошибка при добавлении приоритета.", HttpStatus.NOT_ACCEPTABLE);
     }
 
     @PutMapping("/update")
@@ -40,7 +49,12 @@ public class PriorityController {
         if(priority.getTitle()== null || priority.getTitle().trim().length() == 0){
             return new ResponseEntity("Title must be not empty", HttpStatus.NOT_ACCEPTABLE);
         }
-        return ResponseEntity.ok(priorityService.update(priority));
+
+        if(userRestBuilder.userExists(priority.getUserId())) {
+            return ResponseEntity.ok(priorityService.update(priority));
+        }
+
+        return new ResponseEntity ("Ошибка при обновлении приоритета.", HttpStatus.NOT_ACCEPTABLE);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -70,8 +70,9 @@ public class TaskController {
         if (task.getTitle() == null || task.getTitle().trim().length() == 0) {
             return new ResponseEntity("missed param: title", HttpStatus.NOT_ACCEPTABLE);
         }
-
-        taskService.update(task);
+        if (userRestBuilder.userExists(task.getUserId())) {
+            return ResponseEntity.ok(taskService.update(task));
+        }
 
         return new ResponseEntity(HttpStatus.OK);
 
