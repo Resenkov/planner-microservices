@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import resenkov.work.plannerusers.entity.User;
 import resenkov.work.plannerusers.repository.UserRepository;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class UserService {
@@ -27,9 +29,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User getById(Long userId){
-        return userRepository.getById(userId);
+    public Optional<User> findById(Long id) {
+        return userRepository.findById(id);
     }
+
 
     public void deleteUserById(Long userId){
         userRepository.deleteById(userId);
