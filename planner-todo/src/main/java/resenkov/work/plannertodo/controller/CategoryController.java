@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import resenkov.work.plannertodo.entity.Categories;
 import resenkov.work.plannertodo.search.CategorySearchValues;
 import resenkov.work.plannertodo.service.CategoryService;
-import resenkov.work.plannerutils.rest.resttemplate.UserRestBuilder;
 import resenkov.work.plannerutils.rest.webclient.UserWebClientBuilder;
 
 import java.util.List;
